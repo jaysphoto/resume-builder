@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 215 25% 27%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 215 25% 27%;
+
+    --radius: 0.5rem;
+
+    /* Resume specific tokens */
+    --resume-heading: 222 47% 11%;
+    --resume-subheading: 215 25% 27%;
+    --resume-body: 215 19% 35%;
+    --resume-link: 199 89% 38%;
+    --resume-divider: 214 32% 85%;
+    --resume-tag-bg: 210 40% 96%;
+    --resume-tag-text: 215 25% 27%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 212 27% 84%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    color: hsl(var(--resume-heading));
+  }
+}
+
+/* Print styles for ATS compatibility */
+@media print {
+  @page {
+    margin: 0.5in 0.6in;
+    size: letter;
+  }
+
+  body {
+    font-size: 10pt;
+    line-height: 1.4;
+    color: #000 !important;
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .resume-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  h1 {
+    font-size: 18pt !important;
+  }
+
+  h2 {
+    font-size: 12pt !important;
+    margin-top: 12pt !important;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 11pt !important;
+  }
+
+  .skill-tag {
+    border: 1px solid #ccc !important;
+    background: transparent !important;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+}
