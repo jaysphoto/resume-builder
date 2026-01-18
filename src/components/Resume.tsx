@@ -4,19 +4,19 @@ const Resume = () => {
   return (
     <div className="resume-container max-w-[850px] mx-auto bg-card p-8 md:p-12 shadow-sm">
       {/* Header */}
-      <header className="text-center mb-8 pb-6 border-b border-resume-divider">
+      <header className="text-center pb-6">
         <h1 className="text-3xl md:text-4xl font-bold text-resume-heading mb-2">
           Jay (Geoffrey) De Kleijn
         </h1>
         <p className="text-lg text-resume-subheading font-medium mb-4">
-          Platform Engineer
+          Platform Architect
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm text-resume-body">
           <ContactItem icon={<Mail className="w-4 h-4" />} text="mail@jaysphoto.me" />
           <ContactItem icon={<Phone className="w-4 h-4" />} text="+34 6 903 555 07" />
           <ContactItem icon={<MapPin className="w-4 h-4" />} text="Málaga" />
           <ContactItem icon={<Linkedin className="w-4 h-4" />} text="linkedin.com/in/jaysphoto" isLink />
-          <ContactItem icon={<Github className="w-4 h-4" />} text="github.com/jaysphoto" isLink />
+          {/* <ContactItem icon={<Github className="w-4 h-4" />} text="github.com/jaysphoto" isLink /> */}
         </div>
       </header>
 
@@ -24,8 +24,8 @@ const Resume = () => {
       <Section title="Professional Summary">
         <p className="text-resume-body leading-relaxed">
           Results-driven Platform Engineer with 8+ years of experience architecting, migrating and maintaining
-          high-performance, scalable cloud PaaS/SaaS infrastructure. Expert in AWS, Infrastructure as Code, CI/CD automation and observability solutions.
-          Passionate about enabling developer productivity through self-service platforms and infrastructure as code.
+          performanant, scalable cloud infrastructure. Expert in AWS, IaC, CI/CD automation and observability solutions.
+          Passionate about enabling ownership and productivity with DevOps. 
         </p>
       </Section>
 
@@ -59,14 +59,25 @@ const Resume = () => {
           location="Madrid, Spain"
           dates="Jan 2020 – Mar 2023 · 3 yrs 3 mos"
           achievements={[
-            "During my time at Eventbrite the engineering department scaled from ~ 20 to 50 engineering teams, which required deep rethinking and transition of infrastructure and -ownership. I functioned here as an active participant on platform Architecture discussions: how to slice into monolithic application and -databases, transitioning to AWS multi-account structure, empowering DevOps across all engineering teams, platform security & compliance etc. ",
-            "With the company maturing and restructuring, my main focal point became site reliability engineering (SRE) and changed to the principal engineering role. There I demonstrated best practices by example, doing talks and/or workshops for engineers on topics such as leveraging managed services, applying DevOps practices, (AWS) infrastructure automation, building self-healing fault-tolerant services, implementing infrastructure cost controls.",
-            "I was driving several key initiatives across engineering teams with the Platform Engineering pillar, whilst coaching individual ICs towards their next career advancement. For the SRE team I was involved in strategic planning and key-initiative technical designs."
+            "Technical lead on strategic key-initiatives, examples: platform-wide 1.5X performance optimization, vulnerability reduction of 6X, DNS Route53 migration, 15% AWS Cost reduction.",
+            "Drove mindset change operations -> SRE, adopting DevOps and AWS multi-account architecture.",
+            "Demonstrated best practices on leveraging (AWS) managed services and IaC, building self-healing fault-tolerant services and reviewing operational readiness.",
+          ]}
+        />
+        <ExperienceItem
+          title="Software Eng Team Lead // Lead Architect // Chief Architect"
+          company="ticketscript by Eventbrite"
+          location="Amsterdam, Netherlands"
+          dates="Feb 2012 – Dec 2019 · 7 yrs 10 mos"
+          achievements={[
+            "Technical lead on ticketscript platform acquisition, then subsidiary compliance for NYSE:EB IPO.",
+            "Platform design & migration to resilient, high-performance service-oriented architecture.",
           ]}
         />
       </Section>
 
       {/* Education */}
+      {/*
       <Section title="Education">
         <div className="flex flex-col md:flex-row md:justify-between md:items-baseline">
           <div>
@@ -78,6 +89,7 @@ const Resume = () => {
           <p className="text-resume-body text-sm mt-1 md:mt-0">1997 – 2000</p>
         </div>
       </Section>
+      */}
 
       {/* Certifications */}
       <Section title="Certifications">

@@ -1,11 +1,11 @@
 import Resume from "@/components/Resume";
 // import CoverLetter from "@/components/CoverLetter";
 import PrintButton from "@/components/PrintButton";
-import { Separator } from "@/components/ui/separator";
+// import { Separator } from "@/components/ui/separator";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-secondary py-8 md:py-12 px-4">
+    <div className="min-h-screen py-8 md:py-12 px-4">
       <PrintButton />
       <Resume />
     </div>
