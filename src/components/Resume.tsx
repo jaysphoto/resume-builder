@@ -2,13 +2,13 @@ import { Mail, Phone, MapPin, Linkedin, Github, Globe } from "lucide-react";
 
 const Resume = () => {
   return (
-    <div className="resume-container max-w-[850px] mx-auto bg-card p-8 md:p-12 shadow-sm">
+    <div className="resume-container max-w-[850px] mx-auto bg-card p-8 md:p-6 shadow-sm">
       {/* Header */}
       <header className="text-center pb-6">
         <h1 className="text-3xl md:text-4xl font-bold text-resume-heading mb-2">
           Jay (Geoffrey) De Kleijn
         </h1>
-        <p className="text-lg text-resume-subheading font-medium mb-4">
+        <p className="text-lg text-resume-subheading font-medium mb-2">
           Platform Architect
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm text-resume-body">
@@ -23,8 +23,8 @@ const Resume = () => {
       {/* Professional Summary */}
       <Section title="Professional Summary">
         <p className="text-resume-body leading-relaxed">
-          Results-driven Platform Engineer with 8+ years of experience architecting, migrating and maintaining
-          performanant, scalable cloud infrastructure. Expert in AWS, IaC, CI/CD automation and observability solutions.
+          Results-driven engineer with 8+ years of experience architecting, migrating and maintaining
+          performanant, scalable cloud infrastructure. Expert in software architecture, AWS, IaC, CI/CD automation and observability solutions.
           Passionate about enabling ownership and productivity with DevOps. 
         </p>
       </Section>
@@ -54,6 +54,14 @@ const Resume = () => {
       {/* Professional Experience */}
       <Section title="Professional Experience">
         <ExperienceItem
+          title="Career Break"
+          company="Self-Employed"
+          location="Málaga, Spain"
+          dates="Apr 2023 - Present"
+          achievements={[]}
+        />
+
+        <ExperienceItem
           title="Senior Architect // Principal Site Reliability Engineer"
           company="Eventbrite"
           location="Madrid, Spain"
@@ -71,7 +79,7 @@ const Resume = () => {
           dates="Feb 2012 – Dec 2019 · 7 yrs 10 mos"
           achievements={[
             "Technical lead on ticketscript platform acquisition, then subsidiary compliance for NYSE:EB IPO.",
-            "Platform design & migration to resilient, high-performance service-oriented architecture.",
+            "Directed Service Oriented Architecture & migration to resilient, high-performance platform",
           ]}
         />
       </Section>
@@ -130,7 +138,7 @@ const Section = ({
   title: string; 
   children: React.ReactNode;
 }) => (
-  <section className="mb-6">
+  <section className="mb-6 last:mb-0">
     <h2 className="text-lg font-semibold text-resume-subheading uppercase tracking-wide mb-3 pb-1 border-b border-resume-divider">
       {title}
     </h2>
@@ -181,11 +189,13 @@ const ExperienceItem = ({
     <p className="text-resume-subheading font-medium mb-2">
       {company} — {location}
     </p>
+    { achievements.length > 0  ? (
     <ul className="list-disc list-outside ml-5 text-resume-body space-y-1">
       {achievements.map((achievement, index) => (
         <li key={index} className="leading-relaxed">{achievement}</li>
       ))}
     </ul>
+    ) : null}
   </div>
 );
 
